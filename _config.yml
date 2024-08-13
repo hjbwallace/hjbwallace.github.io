@@ -73,3 +73,5 @@ defaults:
 
 atom_feed:
   hide: true
+
+search: true
