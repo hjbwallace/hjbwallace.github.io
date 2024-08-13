@@ -23,7 +23,7 @@ github_username: hjbwallace
 linkedin_username: hjbwallace
 
 # Build settings
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
