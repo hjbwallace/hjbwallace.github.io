@@ -50,7 +50,10 @@ permalink: /posts/:title
 #   - vendor/gems/
 #   - vendor/ruby/
 
+include: ["_pages"]
+
 defaults:
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -58,3 +61,11 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
