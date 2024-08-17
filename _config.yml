@@ -48,7 +48,7 @@ permalink: /posts/:title
 #   - vendor/ruby/
 
 include: 
-  "_pages"
+  - _pages
 
 defaults:
   # _posts
