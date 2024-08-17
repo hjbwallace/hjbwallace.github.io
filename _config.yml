@@ -14,13 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Harrison Blogs
-author: Harrison Wallace
 description: >- # this means to ignore newlines until "baseurl:"
   Crash courses, memory dumps and anything else that takes my fancy
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: hjbwallace
-linkedin_username: hjbwallace
 
 # Build settings
 theme: minimal-mistakes-jekyll
@@ -50,7 +47,8 @@ permalink: /posts/:title
 #   - vendor/gems/
 #   - vendor/ruby/
 
-include: ["_pages"]
+include: 
+  "_pages"
 
 defaults:
   # _posts
@@ -59,7 +57,6 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
       read_time: true
       show_date: true
 
@@ -75,3 +72,26 @@ atom_feed:
   hide: true
 
 search: true
+
+timezone: Australia/Perth
+
+author:
+  name: "Harrison Wallace"
+  avatar: "/assets/images/cat-in-hat.jpg"
+  location : "Perth, Australia"
+  links:
+     - label: "GitHub"
+       icon: "fab fa-fw fa-github"
+       url: "https://github.com/hjbwallace"
+     - label: "LinkedIn"
+       icon: "fab fa-fw fa-linkedin"
+       url: "https://www.linkedin.com/in/hjbwallace/"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/hjbwallace"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/hjbwallace/"
