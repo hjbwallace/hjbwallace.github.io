@@ -9,6 +9,7 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
+# -------------------------
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
@@ -16,16 +17,25 @@
 title: Harrison Blogs
 description: >- # this means to ignore newlines until "baseurl:"
   Crash courses, memory dumps and anything else that takes my fancy
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+minimal_mistakes_skin: default
+search: true
+
 
 # Build settings
-theme: minimal-mistakes-jekyll
-plugins:
-  - jekyll-feed
+# -------------------------
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
 
-# Change URL routes for blog posts
-permalink: /posts/:title
+
+# Outputting
+# -------------------------
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /:num/
+timezone: Australia/Perth
+
+include: 
+  - _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -47,34 +57,20 @@ permalink: /posts/:title
 #   - vendor/gems/
 #   - vendor/ruby/
 
-include: 
-  - _pages
 
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      read_time: true
-      show_date: true
+# Plugins (previously gems:)
+# -------------------------
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
 
-atom_feed:
-  hide: true
-
-search: true
-
-timezone: Australia/Perth
-
+# Author
+# -------------------------
 author:
   name: "Harrison Wallace"
   avatar: "/assets/images/cat-in-hat.jpg"
@@ -87,6 +83,9 @@ author:
        icon: "fab fa-fw fa-linkedin"
        url: "https://www.linkedin.com/in/hjbwallace/"
 
+
+# Footer
+# -------------------------
 footer:
   links:
     - label: "GitHub"
@@ -95,3 +94,37 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/hjbwallace/"
+
+
+# Defaults
+# -------------------------
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      show_date: true
+      categories:
+      - Posts
+
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+
+# Archive
+# -------------------------
+category_archive:
+  type: liquid
+  path: /categories/
+
+tag_archive:
+  type: liquid
+  path: /tags/
